@@ -1,0 +1,47 @@
+
+<html  xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/head_includes.html :: head_files"></head>
+<title>Delete Your Account</title>
+<body>
+<div class="container">
+    <div style="padding-top: 1em;"></div>
+    <div th:replace="fragments/title.html :: title"></div>
+    <div style="padding-top: 1em;"></div>
+    <div class="row">
+		<div class="col-md-12">
+	 		<h2 align="center">Delete your account</h2>
+		</div>
+	</div> <!-- row -->
+    <form action="#" th:action="@{/delete_account_form}" method="post">
+    <!-- Password -->
+    <div th:if="${password_error != null && password_error.length() > 0}">
+    <div class="form-group row">
+		<div class="col-sm-4"></div>
+			<span th:text="${password_error}" class="inputError"></span>
+			<div class="col-sm-8"></div>
+		</div>
+    </div>
+	<div class="form-group row">
+		<label for="password" class="col-sm-2 col-form-label">Password:</label>
+		<div class="col-sm-6">
+			<input type="password" id="password" name="password" placeholder="Password">
+		</div> <!-- col-sm-6 -->
+		<div class="col-sm-4"></div>
+	</div> <!--  form-group row -->
+	<!--  form-group row -->
+	<div class="form-group row">
+		<div class="col-sm-2"></div>
+	    <div class="col-sm-6">
+	        <span>
+			    <button type="submit" class="btn btn-primary">Delete My Account</button>
+			</span>
+			<span>
+				<a th:href="@{/application}" id="cancel" name="cancel" class="btn btn-primary">Cancel</a>
+			</span>
+		</div>
+		<div class="col-sm-4"></div>
+	</div>
+    </form>
+</div>
+</body>
+</html>
