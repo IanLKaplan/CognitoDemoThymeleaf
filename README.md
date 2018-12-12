@@ -5,11 +5,11 @@ The Thymeleaf templating engine (see https://www.thymeleaf.org/) is popular in t
 
 I have been working on the architecture for a large scale web application (I previously designed and built the nderground social network - see nderground.net). JSP is an old technology and it is not clear that Oracle is doing much to maintain, much less extend JSP. So I have been looking at other server side web page rendering technologies (i.e., template engines). I have been focusing on the Spring framework, so Thymeleaf was an obvious technology to explore.
 
-To gain experience with Thymeleaf I rewrote the web pages for the CognitoDemo application using Thymeleaf tags. In addition, I added an AppConfig class (see cognitodemo.thymeleaf.config.AppConfig) which adds the Spring configuration needed by Thymeleaf. Anyone new to Thymeleaf will probably find this class a useful reference.
+To gain experience with Thymeleaf I rewrote the web pages for the CognitoDemo application (https://github.com/IanLKaplan/CognitoDemo) using Thymeleaf tags. In addition, I added an AppConfig class (see cognitodemo.thymeleaf.config.AppConfig) which adds the Spring configuration needed by Thymeleaf. Anyone new to Thymeleaf will probably find this class a useful reference.
 
 One of the Thymeleaf features that I found attractive is the ability to include web page fragements in a web page. I used fragements to include the standard web page declarations for Bootstrap and other packages. This makes web pages easier to develop and limits changes to the web page header to a single file. I also added a page header fragement that is included in every page.
 
-A reader familiar with JSP can compare the JSP pages in CognitoDemo to the pages in this repository to see how various JSP features are implemented in Thymeleaf.
+A reader familiar with JSP can compare the JSP pages in [CognitoDemo](https://github.com/IanLKaplan/CognitoDemo) to the pages in this repository to see how various JSP features are implemented in Thymeleaf. The CognitoDemo web pages do not make use of include/fragment features that the Thymeleaf version has since I have not figured out if this can be done in JSP/JSTL.
 
 One problem I had with Thymeleaf is the poor error messages. Or, more to the point, nonexistent error messages. For example, in the JSP code in the change_password.jsp page there is the following conditional. Note that in the JSP I used single quotes to surround the conditional.
 
